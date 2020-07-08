@@ -25,18 +25,18 @@ class ValueTooLargeError(Exception):
     pass
 
 
-A = 'abc'#input("A:")
-B = 'b'#input("B: ")
+A = 'aba'  # input("A:")
+B = 'b'  # input("B: ")
 if len(A) > 100 or len(B) > 100:
     raise ValueTooLargeError(f"The {A if len(A) > 100 else B} Length is greater than 100")
 else:
     pass
 count = 0
 
-#     if A[items] != A[-items-1]:
-#         pass
-#     count+=1
-# print(count)
-    # print(A[:])
-# new = B.join(stitching)
-# print(new)
+for i in range(len(A) + 1):
+    new_str = A[:i] + B + A[i:]
+    print(f"{A[:i]}【{B}】{A[i:]}")
+    if new_str == new_str[::-1]:
+        count += 1
+        print(f"the palindrome is {new_str}")
+print(count)
