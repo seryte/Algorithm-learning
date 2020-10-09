@@ -19,10 +19,24 @@
                             女神保佑         永无BUG                            佛祖保佑         永无BUG
                                                                                                      
 '''
+from typing import List
 
-nums = [2, 7, 11, 15]
-target = 9
-for i in nums:
-    for j in nums:
-        if i+j == target:
-            print(i, j)
+
+class Solution:
+    # 暴力算法时间复杂度O（n²），空间复杂度O（1）
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        for i in range(len(nums)):
+            for j in range(i + 1, len(nums)):
+                if nums[i] + nums[j] == target:
+                    print([i, j])
+                    return [i, j]
+
+
+s = Solution()
+s.twoSum([3, 2, 4], 6)
+s.twoSum([3,3], 6)
