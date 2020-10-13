@@ -34,11 +34,33 @@ class Solution:
         :type target: int
         :rtype: List[int]
         """
+        ret = []
         for i in range(len(nums)):
             for j in range(i + 1, len(nums)):
                 if nums[i] + nums[j] == target:
-                    return [i, j]
+                    ret.append([i, j])
+        return ret
+
 
 s = Solution()
-print(s.twoSum([x for x in range(500,10000)], 1001))
+# print(s.twoSum([5, 12, 6, 3, 9, 2, 1, 7], 13))
 # s.twoSum([3,3], 6)
+
+
+# 哈希法
+class Solution:
+    @coast
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        map = {nums[k]: k for k in range(len(nums))}
+        ret = []
+        for i in range(len(nums)):
+            other = target - nums[i]
+            if other in map and map[other] != i:
+                ret.append(i)
+                ret.append(map[other])
+                del map[nums[i]]
+        return ret
+
+
+s = Solution()
+print(s.twoSum([3,2,4], 6))
