@@ -43,6 +43,8 @@ class Solution:
 
 
 s = Solution()
+
+
 # print(s.twoSum([5, 12, 6, 3, 9, 2, 1, 7], 13))
 # s.twoSum([3,3], 6)
 
@@ -63,4 +65,4 @@ class Solution:
 
 
 s = Solution()
-print(s.twoSum([3,2,4], 6))
+print(s.twoSum([3, 2, 4], 6))
