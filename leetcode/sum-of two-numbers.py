@@ -19,10 +19,9 @@
                             女神保佑         永无BUG                            佛祖保佑         永无BUG
                                                                                                      
 '''
-from time import sleep
 from typing import List
 
-from time_coase import coast
+from util.time_coase import coast
 
 
 class Solution:
